@@ -1,0 +1,34 @@
+<ion-content padding>
+
+  <p>
+    Min: <b>18</b><br>
+    Max: <b>28</b><br>
+    MinDelta: <b>2</b>
+  </p>
+
+  <ion-row>
+    <ion-col col-3 offset-3>
+      <button ion-button clear block (click)="modifyMinSP(1)"
+        [disabled]="(spMin + minSpDelta) >= max">
+        <ion-icon name="ios-arrow-up"></ion-icon>
+      </button>
+      <h2 text-center [ngClass]="{'forced': spMinForced}">{{ spMin }}</h2>
+      <button ion-button clear block (click)="modifyMinSP(-1)"
+        [disabled]="spMin <= min">
+        <ion-icon name="ios-arrow-down"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-3>
+      <button ion-button clear block (click)="modifyMaxSP(1)"
+        [disabled]="spMax >= max">
+        <ion-icon name="ios-arrow-up"></ion-icon>
+      </button>
+      <h2 text-center [ngClass]="{'forced': spMaxForced}">{{ spMax }}</h2>
+      <button ion-button clear block (click)="modifyMaxSP(-1)"
+        [disabled]="(spMax - minSpDelta) <= min">
+        <ion-icon name="ios-arrow-down"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

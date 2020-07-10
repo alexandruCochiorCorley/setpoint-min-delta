@@ -1,0 +1,12 @@
+.forced {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+}
